@@ -17,7 +17,6 @@ app.get('/getNote', function(req, res) {
 
 app.post('/updateNote/:note', function(req, res) {
     stringifyFile += req.params.note;
-    res.send(stringifyFile);
     fs.writeFile('./test.json', stringifyFile, function(err) {
         if (err) throw err;
         console.log('file updated!');
